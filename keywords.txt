@@ -1,0 +1,37 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+WifiClient      KEYWORD1
+OtaServer       KEYWORD1
+MqttConfig      KEYWORD1
+MqttClient      KEYWORD1
+DisplayCategory KEYWORD1
+Helpers
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+# WiFiClient
+instance        KEYWORD2
+
+# OtaServer
+listen          KEYWORD2
+
+# MqttConfig
+getBrokerIp     KEYWORD2
+getBrokerPort   KEYWORD2
+getUsername     KEYWORD2
+getPassword     KEYWORD2
+getCallbackFn   KEYWORD2
+
+# MqttClient
+connect         KEYWORD2
+isConnected     KEYWORD2
+subscribe       KEYWORD2
+publish         KEYWORD2
+keepAlive       KEYWORD2
+
+# Helpers
+toIP            KEYWORD2
