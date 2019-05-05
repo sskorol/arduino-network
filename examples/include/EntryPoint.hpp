@@ -1,6 +1,7 @@
 #ifndef ENTRY_POINT_HPP
 #define ENTRY_POINT_HPP
 
+#include "Arduino.h"
 #include <ArduinoJson.h>
 
 // Common settings
