@@ -4,3 +4,4 @@
 .piolibdeps
 platformio.ini
 EntryPoint.*
+.pio
