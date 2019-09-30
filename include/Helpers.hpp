@@ -1,14 +1,14 @@
 #ifndef HELPERS_HPP
-#define HERLPERS_HPP
+#define HELPERS_HPP
 
 #ifdef ARDUINO_ARCH_ESP32
-  #include <WiFi.h>
+    #include <WiFi.h>
 #elif defined(ARDUINO_ARCH_ESP8266)
-  #include <ESP8266WiFi.h>
+    #include <ESP8266WiFi.h>
 #endif
 
 namespace Helpers {
-IPAddress toIP(String);
+    IPAddress toIP(const String&);
 }
 
 #endif

@@ -4,7 +4,9 @@ This library simplifies working with common networking tasks, e.g. exchanging me
 
 ## Installation
 
-As **arduino-network** is not yet published to official registry, you have to download it manually. Just copy corresponding sources into **./lib/arduino-network** (assuming you're using PlatformIO) or **Arduino/libraries/arduino-network** (in case of Arduino usage) folder.
+Just follow the recommended [PlatformIO instructions](https://platformio.org/lib/show/6373/arduino-network/installation).
+
+In case of any manual updates, you have to clone this repository, make modifications and copy corresponding sources into ./lib/arduino-network (assuming you're using PlatformIO) or Arduino/libraries/arduino-network (in case of Arduino usage) folder.
 
 ## Usage
 
