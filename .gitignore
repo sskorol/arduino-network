@@ -7,3 +7,4 @@ platformio.ini
 EntryPoint.*
 .pio
 cmake*
+*.sh

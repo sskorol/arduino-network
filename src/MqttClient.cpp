@@ -10,7 +10,8 @@ MqttClient::MqttClient(MqttConfig *_config, WifiClient *wifiClient) : config(_co
 
 void MqttClient::connect(void (*subscriptionFn)()) {
     while (!mqttClient->connected()) {
-        if (mqttClient->connect(CLIENT_ID.c_str(), config->getUsername(), config->getPassword())) {
+        if (mqttClient->connect(CLIENT_ID.c_str(), config->getUsername(), config->getPassword(), config->getWillTopic(),
+                                config->getWillQos(), config->getWillRetain(), config->getWillMessage())) {
             Serial.println("MQTT connected");
             subscriptionFn();
         } else {

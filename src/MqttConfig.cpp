@@ -8,7 +8,19 @@ MqttConfig::MqttConfig(const char *_brokerIp, uint16_t _brokerPort, const char *
                                                                                            username(_username),
                                                                                            password(_password),
                                                                                            callback(std::move(
-                                                                                                   _callbackFn)) {}
+                                                                                                   _callbackFn)),
+                                                                                           willTopic(nullptr),
+                                                                                           willMessage(nullptr),
+                                                                                           willQos(0),
+                                                                                           willRetain(true) {}
+
+MqttConfig *MqttConfig::withWill(const char *topic, const char *message, uint8_t qos, boolean retain) {
+    willTopic = topic;
+    willMessage = message;
+    willQos = qos;
+    willRetain = retain;
+    return this;
+}
 
 const char *MqttConfig::getBrokerIp() const {
     return brokerIp;
@@ -24,6 +36,22 @@ const char *MqttConfig::getUsername() const {
 
 const char *MqttConfig::getPassword() const {
     return password;
+}
+
+const char *MqttConfig::getWillTopic() const {
+    return willTopic;
+}
+
+const char *MqttConfig::getWillMessage() const {
+    return willMessage;
+}
+
+uint8_t MqttConfig::getWillQos() {
+    return willQos;
+}
+
+boolean MqttConfig::getWillRetain() {
+    return willRetain;
 }
 
 std::function<void(char *, uint8_t *, unsigned int)> MqttConfig::getCallbackFn() {

@@ -20,10 +20,15 @@ instance        KEYWORD2
 listen          KEYWORD2
 
 # MqttConfig
+withWill        KEYWORD2
 getBrokerIp     KEYWORD2
 getBrokerPort   KEYWORD2
 getUsername     KEYWORD2
 getPassword     KEYWORD2
+getWillTopic    KEYWORD2
+getWillMessage  KEYWORD2
+getWillQos      KEYWORD2
+getWillRetain   KEYWORD2
 getCallbackFn   KEYWORD2
 
 # MqttClient
