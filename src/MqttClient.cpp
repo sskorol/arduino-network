@@ -28,8 +28,8 @@ void MqttClient::subscribe(const char *topic) {
     mqttClient->subscribe(topic);
 }
 
-void MqttClient::publish(const char *topic, const char *message) {
-    mqttClient->publish(topic, message);
+void MqttClient::publish(const char *topic, const char *message, boolean retain) {
+    mqttClient->publish(topic, message, retain);
 }
 
 void MqttClient::keepAlive() {

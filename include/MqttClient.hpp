@@ -19,7 +19,7 @@ public:
 
     void subscribe(const char *);
 
-    void publish(const char *, const char *);
+    void publish(const char *, const char *, boolean = false);
 
     void keepAlive();
 };
