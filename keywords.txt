@@ -21,6 +21,8 @@ listen          KEYWORD2
 
 # MqttConfig
 withWill        KEYWORD2
+withBufferSize  KEYWORD2
+getBufferSize   KEYWORD2
 getBrokerIp     KEYWORD2
 getBrokerPort   KEYWORD2
 getUsername     KEYWORD2

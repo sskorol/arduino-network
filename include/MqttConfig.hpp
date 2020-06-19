@@ -9,17 +9,22 @@ class MqttConfig {
     const uint16_t brokerPort;
     const char *username;
     const char *password;
+    MQTT_CALLBACK_SIGNATURE;
     const char *willTopic;
     const char *willMessage;
+    uint16 bufferSize;
     uint8_t willQos;
     boolean willRetain;
-    MQTT_CALLBACK_SIGNATURE;
 
 public:
-    MqttConfig(const char *, uint16_t, const char *, const char *,
-               std::function<void(char *, uint8_t *, unsigned int)>);
+    MqttConfig(const char *brokerIp, uint16_t brokePort, const char *username, const char *password,
+               std::function<void(char *, uint8_t *, unsigned int)> callback);
 
-    MqttConfig *withWill(const char *, const char *, uint8_t = 0, boolean = true);
+    MqttConfig *withWill(const char *topic, const char *message, uint8_t qos = 0, boolean retain = false);
+
+    MqttConfig *withBufferSize(uint16 size);
+
+    uint16 getBufferSize() const;
 
     const char *getBrokerIp() const;
 
@@ -33,9 +38,9 @@ public:
 
     const char *getWillMessage() const;
 
-    uint8_t getWillQos();
+    uint8_t getWillQos() const;
 
-    boolean getWillRetain();
+    boolean getWillRetain() const;
 
     std::function<void(char *, uint8_t *, unsigned int)> getCallbackFn();
 };

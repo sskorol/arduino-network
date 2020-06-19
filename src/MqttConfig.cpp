@@ -1,5 +1,4 @@
 #include "MqttConfig.hpp"
-
 #include <utility>
 
 MqttConfig::MqttConfig(const char *_brokerIp, uint16_t _brokerPort, const char *_username, const char *_password,
@@ -20,6 +19,15 @@ MqttConfig *MqttConfig::withWill(const char *topic, const char *message, uint8_t
     willQos = qos;
     willRetain = retain;
     return this;
+}
+
+MqttConfig *MqttConfig::withBufferSize(uint16 size) {
+    bufferSize = size;
+    return this;
+}
+
+uint16 MqttConfig::getBufferSize() const {
+    return bufferSize;
 }
 
 const char *MqttConfig::getBrokerIp() const {
@@ -46,11 +54,11 @@ const char *MqttConfig::getWillMessage() const {
     return willMessage;
 }
 
-uint8_t MqttConfig::getWillQos() {
+uint8_t MqttConfig::getWillQos() const {
     return willQos;
 }
 
-boolean MqttConfig::getWillRetain() {
+boolean MqttConfig::getWillRetain() const {
     return willRetain;
 }
 
