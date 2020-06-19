@@ -22,15 +22,6 @@ MqttConfig *MqttConfig::withWill(const char *topic, const char *message, uint8_t
     return this;
 }
 
-MqttConfig *MqttConfig::withBufferSize(uint16 size) {
-    bufferSize = size;
-    return this;
-}
-
-uint16 MqttConfig::getBufferSize() const {
-    return bufferSize;
-}
-
 const char *MqttConfig::getBrokerIp() const {
     return brokerIp;
 }

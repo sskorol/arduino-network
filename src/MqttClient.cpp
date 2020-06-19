@@ -4,7 +4,6 @@ const String MqttClient::CLIENT_ID = "NodeMCUClient-" + String(random(0xffff), H
 
 MqttClient::MqttClient(MqttConfig *_config, WifiClient *wifiClient) : config(_config) {
     mqttClient = new PubSubClient(*wifiClient->instance());
-    mqttClient->setBufferSize(config->getBufferSize());
     mqttClient->setServer(config->getBrokerIp(), config->getBrokerPort());
     mqttClient->setCallback(config->getCallbackFn());
 }

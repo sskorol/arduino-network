@@ -20,11 +20,7 @@ public:
     MqttConfig(const char *brokerIp, uint16_t brokePort, const char *username, const char *password,
                std::function<void(char *, uint8_t *, unsigned int)> callback);
 
-    MqttConfig *withWill(const char *topic, const char *message, uint8_t qos = 0, boolean retain = false);
-
-    MqttConfig *withBufferSize(uint16 size);
-
-    uint16 getBufferSize() const;
+    MqttConfig *withWill(const char *topic, const char *message, uint8_t qos = 0, boolean retain = true);
 
     const char *getBrokerIp() const;
 
