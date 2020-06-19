@@ -10,6 +10,7 @@ MqttConfig::MqttConfig(const char *_brokerIp, uint16_t _brokerPort, const char *
                                                                                                    _callbackFn)),
                                                                                            willTopic(nullptr),
                                                                                            willMessage(nullptr),
+                                                                                           bufferSize(256),
                                                                                            willQos(0),
                                                                                            willRetain(true) {}
 
